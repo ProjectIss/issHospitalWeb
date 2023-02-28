@@ -1,0 +1,55 @@
+//BEGIN: Datatable Styles
+.table-scrollable{
+    overflow: auto;
+}
+table.dataTable {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    thead {
+        tr {
+            th {
+                background-color: $color-aqual-spring;
+                font-size: 0.9rem;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td{
+                font-size: 0.9rem;
+            }
+            &:nth-child(odd) {
+                //background-color: $color-white;
+                td{
+                    background-color: $color-white;
+                    --cui-table-accent-bg:$color-white;
+                }
+            }
+            &:nth-child(even) {
+                td{
+                    background-color: $color-white-smoke;
+                }
+            }
+        }
+    }
+}
+//END: Datatable Styles
+
+
+//BEGIN: Report Table Style
+.tbl-report{
+    thead{
+        tr{
+            th{
+
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+
+            }
+        }
+    }
+}
+//END: Report Table Styles

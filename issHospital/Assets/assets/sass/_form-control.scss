@@ -1,0 +1,36 @@
+//BEGIN: Forms pages Styles
+.top-add-btn{
+    text-align: right;
+    margin-bottom: 1rem;
+}
+.bottom-btn-group{
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid $color-white-smoke;
+    text-align: center;
+}
+.form-group{
+    margin-bottom: 1rem;
+    label{
+        font-weight: 600;
+    }
+    .form-control,.form-select{
+        &:focus{
+            box-shadow: none;
+        }
+    }
+}
+.export-list{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 0.5rem;
+    li{
+        button{
+            color: $color-navy-blue;
+        }
+    }
+}
+//END: Forms Pages Styles

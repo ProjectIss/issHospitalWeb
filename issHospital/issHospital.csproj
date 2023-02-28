@@ -1,0 +1,890 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{46171193-C13D-4337-A0EB-34E55B8D135D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>issHospital</RootNamespace>
+    <AssemblyName>issHospital</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OPController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\assets\css\construction.theme.min.css" />
+    <Content Include="Assets\assets\css\login.css" />
+    <Content Include="Assets\assets\css\style.css" />
+    <Content Include="Assets\assets\images\theme-img\avatars\1.jpg" />
+    <Content Include="Assets\assets\images\theme-img\avatars\2.jpg" />
+    <Content Include="Assets\assets\images\theme-img\avatars\3.jpg" />
+    <Content Include="Assets\assets\images\theme-img\avatars\4.jpg" />
+    <Content Include="Assets\assets\images\theme-img\avatars\5.jpg" />
+    <Content Include="Assets\assets\images\theme-img\avatars\6.jpg" />
+    <Content Include="Assets\assets\images\theme-img\avatars\7.jpg" />
+    <Content Include="Assets\assets\images\theme-img\avatars\8.jpg" />
+    <Content Include="Assets\assets\images\theme-img\avatars\9.jpg" />
+    <Content Include="Assets\assets\images\theme-img\brand\coreui.svg" />
+    <Content Include="Assets\assets\images\theme-img\favicon\android-icon-144x144.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\android-icon-192x192.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\android-icon-36x36.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\android-icon-48x48.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\android-icon-72x72.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\android-icon-96x96.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon-114x114.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon-120x120.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon-144x144.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon-152x152.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon-180x180.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon-57x57.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon-60x60.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon-72x72.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon-76x76.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon-precomposed.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\apple-icon.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\browserconfig.xml" />
+    <Content Include="Assets\assets\images\theme-img\favicon\favicon-16x16.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\favicon-32x32.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\favicon-96x96.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\favicon.ico" />
+    <Content Include="Assets\assets\images\theme-img\favicon\ms-icon-144x144.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\ms-icon-150x150.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\ms-icon-310x310.png" />
+    <Content Include="Assets\assets\images\theme-img\favicon\ms-icon-70x70.png" />
+    <Content Include="Assets\assets\js\issconstruction.theme.js" />
+    <Content Include="Assets\assets\js\jquery-3.6.1.min.js" />
+    <Content Include="Assets\assets\plugins\constrctionui\js\issconstruction.bundle.min.js" />
+    <Content Include="Assets\assets\plugins\datatable\css\buttons.dataTables.min.css" />
+    <Content Include="Assets\assets\plugins\datatable\css\jquery.dataTables.min.css" />
+    <Content Include="Assets\assets\plugins\datatable\js\buttons.html5.min.js" />
+    <Content Include="Assets\assets\plugins\datatable\js\buttons.print.min.js" />
+    <Content Include="Assets\assets\plugins\datatable\js\dataTables.buttons.min.js" />
+    <Content Include="Assets\assets\plugins\datatable\js\jquery.dataTables.min.js" />
+    <Content Include="Assets\assets\plugins\datatable\js\jszip.min.js" />
+    <Content Include="Assets\assets\plugins\datatable\js\pdfmake.min.js" />
+    <Content Include="Assets\assets\plugins\datatable\js\vfs_fonts.js" />
+    <Content Include="Assets\assets\plugins\simplebar\css\simplebar.css" />
+    <Content Include="Assets\assets\plugins\simplebar\js\simplebar.min.js" />
+    <Content Include="Assets\Images\logo-construction.png" />
+    <Content Include="Assets\js\app.js" />
+    <Content Include="Assets\js\custom.js" />
+    <Content Include="Assets\js\FileSaver.js" />
+    <Content Include="Assets\js\jquery.min.js" />
+    <Content Include="Assets\js\jquery.validate.js" />
+    <Content Include="Assets\js\picker_date.js" />
+    <Content Include="Assets\js\xlsx.full.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Assets\assets\css\construction.theme.min.css.map" />
+    <Content Include="Assets\assets\css\style.css.map" />
+    <Content Include="Assets\assets\images\theme-img\favicon\manifest.json" />
+    <Content Include="Assets\assets\plugins\constrctionui\js\issconstruction.bundle.min.js.map" />
+    <Content Include="Assets\assets\sass\construction.theme.scss" />
+    <Content Include="Assets\assets\sass\_colors.scss" />
+    <Content Include="Assets\assets\sass\_common.scss" />
+    <Content Include="Assets\assets\sass\_datatable.scss" />
+    <Content Include="Assets\assets\sass\_fonts.scss" />
+    <Content Include="Assets\assets\sass\_form-control.scss" />
+    <Content Include="Assets\assets\sass\_modal.scss" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Template\prium.github.io\falcon\assets\img\illustrations\ecommerce-bg.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\calendar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\chat.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\billing.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\checkout.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\customer-details.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\customers.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\invoice.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\orders\order-details.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\orders\order-list.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\product\product-details.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\product\product-grid.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\product\product-list.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-commerce\shopping-cart.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-learning\course\course-details.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-learning\course\course-grid.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-learning\course\course-list.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-learning\course\create-a-course.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-learning\student-overview.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\e-learning\trainer-profile.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\email\compose.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\email\email-detail.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\email\inbox.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\events\create-an-event.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\events\event-detail.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\events\event-list.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\kanban.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\social\activity-log.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\social\feed.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\social\followers.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\social\notifications.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\support-desk\card-view.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\support-desk\contact-details.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\support-desk\contacts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\support-desk\quick-links.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\support-desk\reports.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\support-desk\table-view.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\app\support-desk\tickets-preview.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\css\theme-rtl.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\css\theme.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\css\user-rtl.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\css\user.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\data\usa.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\data\world.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\1.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\10.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\11.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\12.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\2.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\3.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\4.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\5.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\6.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\7.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\8.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\chat\9.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\crm\call.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\crm\email.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\crm\india.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\crm\nepal.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\crm\other.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\crm\social.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\crm\uae.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\doc\error.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\ecommerce\1.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\ecommerce\2.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\ecommerce\3.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\ecommerce\4.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\ecommerce\5.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\ecommerce\6.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\ecommerce\7.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\avatar\student.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\avatar\trainer.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\courses\course-details.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\courses\course1.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\courses\course2.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\courses\course3.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\courses\course4.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\courses\course5.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\courses\course6.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\courses\course7.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\courses\course8.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\courses\course9.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\lessons\chapter1.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\lessons\chapter2.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\lessons\chapter3.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\lessons\chapter4.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\elearning\lessons\intro.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\favicons\apple-touch-icon.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\favicons\favicon-16x16.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\favicons\favicon-32x32.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\favicons\favicon.ico" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\favicons\mstile-150x150.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\gallery\2.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\gallery\2000.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\gallery\2001.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\gallery\2006.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\gallery\2007.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\gallery\2008.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\gallery\2010.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\gallery\3.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\gallery\4.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\gallery\5.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\1.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\10.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\11.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\12.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\13.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\14.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\16.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\17.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\18.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\19.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\2.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\20.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\3.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\4.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\5.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\6.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\7.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\8.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\9.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\bg-1.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\bg-2.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\bg-navbar.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\card.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\dashboard-alt.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\default.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\falcon-mode-dark.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\falcon-mode-default.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\image-file-2.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\inverted.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\generic\vibrant.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\arrows-h.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\chevron-up.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\chip.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\chrome-logo.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\cloud-download.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\cloud-upload.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\connect-circle.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\cookie-1.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\discount.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\docs.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\double-chevron-up.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\edit-alt.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\firefox-logo.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\free.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\icon-payment-methods-grid.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\icon-payment-methods.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\icon-paypal-full.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\left-arrow-from-left.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\master-card.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\networking.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\paragraph.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\play.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\pro.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\safari-logo.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\shield.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\signal.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\16.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\21.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\41.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\45.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\47.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\48.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\49.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\50.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\authentication-corner.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\bg-shape.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\calendar.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\comment-active.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\comment-inactive.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\corner-1.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\corner-2.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\corner-3.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\corner-4.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\corner-5.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\corner-6.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\corner-7.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\course-details-bg.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\falcon.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\half-circle.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\image.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\international-women-s-day-2.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\like-active.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\like-inactive.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\location.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\navbar-vertical.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\shape-1.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\spot-illustrations\share-inactive.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\star_on.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\target.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\triple-chevron-up.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\user-plus.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\users.svg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\visa.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\weather-icon.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\weather-sm.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\zip.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\illustrations\bg-wave.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\illustrations\corner-6.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\illustrations\crm-bar-chart.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\illustrations\crm-line-chart.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\illustrations\ecommerce-bg.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\illustrations\reports-bg.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\illustrations\reports-greeting.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\illustrations\ticket-bg.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\illustrations\ticket-welcome.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\kanban\1.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\kanban\2.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\kanban\3.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\kanban\4.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\adobe-creative-cloud.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\apple.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\asana-logo.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\atlassian.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\b&amp;w\1.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\b&amp;w\10.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\b&amp;w\11.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\b&amp;w\12.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\b&amp;w\2.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\b&amp;w\4.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\b&amp;w\6.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\bs-5.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\coursera.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\digitalocean.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\facebook.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\g.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\github.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\gmail.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\goodreads.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\google.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\harvard.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\hp.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\hubstaff.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\intel-2.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\logo-invoice.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\mailbluster.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\medium.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\netflix.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\nike.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\nvidia.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\oxford.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\paypal.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\pinterest.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\spectrum.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\spotify.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\staten.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\stripe.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\tj-heigh-school.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\unsplash.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\logos\youtube.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\management\activity-1.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\management\activity-2.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\management\activity-3.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\management\activity-4.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\management\activity-5.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\management\activity-6.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\management\activity-7.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\management\activity-8.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\management\activity-9.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\deviantart.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\discord.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\facebook.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\github-light.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\google.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\hp.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\instagram.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\linkedin.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\mailbluster.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\pinterest.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\slack.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\spotify.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\steam.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\themewagon.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\trello.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\twitter.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\nav-icons\xbox.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\1-2.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\1-3.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\1-4.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\1-5.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\1-6.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\1.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\10.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\11.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\12.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\13.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\14.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\2-thumb.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\2.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\3-thumb.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\3.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\4.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\5-thumb.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\5.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\6.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\7.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\8.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\products\9.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\1-thumb.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\1.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\10.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\11.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\12.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\13.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\14-thumb.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\14.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\15.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\16.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\17.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\18.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\19.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\2-thumb.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\2.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\20.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\21.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\22.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\23.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\24.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\25-thumb.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\25.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\3-thumb.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\3.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\4-thumb.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\4.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\5-thumb.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\5.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\6.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\7.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\8.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\9.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\team\avatar.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\due-tickets.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\hold-tickets.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\open-tickets.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\reports\1.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\reports\2.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\reports\3.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\reports\4.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\reports\5.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\reports\6.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\reports\7.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\tickets\unassigned.png" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\js\config.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\js\echarts-example.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\js\emoji-button.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\js\flatpickr.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\js\theme.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\video\beach.jpg" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\video\beach.mp4" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\video\beach.webm" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\changelog.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\dashboard\analytics.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\dashboard\crm.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\dashboard\e-commerce.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\dashboard\lms.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\dashboard\project-management.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\dashboard\saas.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\dashboard\support-desk.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\demo\combo-nav.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\demo\navbar-double-top.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\demo\navbar-top.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\demo\navbar-vertical-card.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\demo\navbar-vertical-inverted.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\demo\navbar-vertical-vibrant.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\demo\navbar-vertical.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\documentation\customization\configuration.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\documentation\customization\dark-mode.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\documentation\customization\plugin.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\documentation\customization\styling.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\documentation\design-file.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\documentation\faq.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\documentation\getting-started.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\documentation\gulp.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\index-2.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\index.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\chartjs.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\d3js.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\echarts\bar-charts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\echarts\candlestick-charts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\echarts\gauge-charts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\echarts\geo-map.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\echarts\heatmap-charts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\echarts\how-to-use.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\echarts\line-charts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\echarts\pie-charts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\echarts\radar-charts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\charts\echarts\scatter-charts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\accordion.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\alerts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\anchor.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\animated-icons.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\background.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\badges.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\bottom-bar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\breadcrumbs.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\buttons.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\calendar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\cards.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\carousel\bootstrap.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\carousel\swiper.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\collapse.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\cookie-notice.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\countup.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\draggable.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\dropdowns.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\jquery-components.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\list-group.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\modals.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\navs-and-tabs\combo-navbar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\navs-and-tabs\double-top-navbar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\navs-and-tabs\navbar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\navs-and-tabs\navs.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\navs-and-tabs\tabs.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\navs-and-tabs\top-navbar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\navs-and-tabs\vertical-navbar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\offcanvas.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\pagination.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\pictures\avatar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\pictures\figures.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\pictures\hoverbox.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\pictures\images.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\pictures\lightbox.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\placeholder.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\popovers.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\progress-bar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\scrollspy.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\search.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\spinners.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\timeline.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\toasts.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\tooltips.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\treeview.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\typed-text.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\videos\embed.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\components\videos\plyr.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\advance\advance-select.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\advance\date-picker.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\advance\editor.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\advance\emoji-button.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\advance\file-uploader.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\advance\rating.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\basic\checks.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\basic\form-control.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\basic\input-group.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\basic\layout.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\basic\range.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\basic\select.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\floating-labels.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\validation.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\forms\wizard.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\icons\bootstrap-icons.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\icons\feather.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\icons\font-awesome.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\icons\material-icons.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\maps\google-map.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\maps\leaflet-map.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\tables\advance-tables.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\tables\basic-tables.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\tables\bulk-select.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\borders.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\clearfix.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\colored-links.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\colors.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\display.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\flex.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\float.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\grid.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\overlayscrollbar.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\position.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\sizing.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\spacing.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\stretched-link.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\text-truncation.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\typography.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\vertical-align.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\modules\utilities\visibility.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\card\confirm-mail.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\card\forgot-password.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\card\lock-screen.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\card\login.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\card\logout.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\card\register.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\card\reset-password.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\simple\confirm-mail.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\simple\forgot-password.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\simple\lock-screen.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\simple\login.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\simple\logout.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\simple\register.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\simple\reset-password.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\split\confirm-mail.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\split\forgot-password.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\split\lock-screen.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\split\login.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\split\logout.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\split\register.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\split\reset-password.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\authentication\wizard.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\errors\404.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\errors\500.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\faq\faq-accordion.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\faq\faq-alt.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\faq\faq-basic.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\landing.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\miscellaneous\associations.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\miscellaneous\invite-people.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\miscellaneous\privacy-policy.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\pricing\pricing-alt.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\pricing\pricing-default.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\starter.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\user\profile.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\pages\user\settings.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\anchorjs\anchor.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\bootstrap\bootstrap.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\chart\chart.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\choices\choices.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\choices\choices.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\countup\countUp.umd.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\d3\d3.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\datatables.net-bs5\dataTables.bootstrap5.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\datatables.net-bs5\dataTables.bootstrap5.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\datatables.net-fixedcolumns\dataTables.fixedColumns.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\datatables.net\jquery.dataTables.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\dayjs\dayjs.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\draggable\draggable.bundle.legacy.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\dropzone\dropzone.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\dropzone\dropzone.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\echarts\echarts.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\flatpickr\flatpickr.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\fontawesome\all.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\fullcalendar\main.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\fullcalendar\main.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\glightbox\glightbox.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\glightbox\glightbox.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\is\is.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\jquery\jquery.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\leaflet.markercluster\leaflet.markercluster.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\leaflet.markercluster\MarkerCluster.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\leaflet.markercluster\MarkerCluster.Default.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\leaflet.tilelayer.colorfilter\leaflet-tilelayer-colorfilter.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\leaflet\images\layers-2x.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\leaflet\images\layers.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\leaflet\images\marker-icon.html" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\leaflet\leaflet.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\leaflet\leaflet.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\list.js\list.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\lodash\lodash.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\lottie\lottie.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\plyr\plyr.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\plyr\plyr.polyfilled.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\popper\popper.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\prism\prism-okaidia.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\prism\prism.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\rater-js\index.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\select2-bootstrap-5-theme\select2-bootstrap-5-theme.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\select2\select2.full.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\select2\select2.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\select2\select2.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\simplebar\simplebar.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\simplebar\simplebar.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\swiper\swiper-bundle.min.css" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\swiper\swiper-bundle.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\tinymce\tinymce.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\typed.js\typed.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\vendors\validator\validator.min.js" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\widgets.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\favicons\manifest.json" />
+    <Content Include="Template\prium.github.io\falcon\v3.14.0\assets\img\icons\star_on.svg.readme" />
+    <Content Include="Views\OP\Index.cshtml" />
+    <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\OP\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\issHospital_Business\issHospital_Business.csproj">
+      <Project>{e0bc6f89-7b92-4b4e-9906-d6a02c640e9a}</Project>
+      <Name>issHospital_Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\issHospital_Utility\issHospital_Utility.csproj">
+      <Project>{5dd422d6-de24-4d4d-91d5-9e9367c1276f}</Project>
+      <Name>issHospital_Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50434</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50434/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

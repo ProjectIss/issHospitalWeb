@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A26079F-0AB8-4BAC-9262-C27936352A80}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>issHospital_Repo</RootNamespace>
+    <AssemblyName>issHospital_Repo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="issDB.cs" />
+    <Compile Include="Migrations\202302220505108_M1.cs" />
+    <Compile Include="Migrations\202302220505108_M1.designer.cs">
+      <DependentUpon>202302220505108_M1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302221033219_M2.cs" />
+    <Compile Include="Migrations\202302221033219_M2.designer.cs">
+      <DependentUpon>202302221033219_M2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302221208457_M3.cs" />
+    <Compile Include="Migrations\202302221208457_M3.designer.cs">
+      <DependentUpon>202302221208457_M3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302221254043_M4.cs" />
+    <Compile Include="Migrations\202302221254043_M4.designer.cs">
+      <DependentUpon>202302221254043_M4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202302230620557_m5.cs" />
+    <Compile Include="Migrations\202302230620557_m5.designer.cs">
+      <DependentUpon>202302230620557_m5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CustomerSetup.cs" />
+    <Compile Include="Models\ItemSetup.cs" />
+    <Compile Include="Models\TblMenuSetup.cs" />
+    <Compile Include="Models\TblAlterItem.cs" />
+    <Compile Include="Models\TblCategory.cs" />
+    <Compile Include="Models\TblDept.cs" />
+    <Compile Include="Models\TblDoctors.cs" />
+    <Compile Include="Models\Tblprescription.cs" />
+    <Compile Include="Models\TblReceipt.cs" />
+    <Compile Include="Models\TblOpentry.cs" />
+    <Compile Include="Models\TblPatreg.cs" />
+    <Compile Include="Models\Tblsupplier.cs" />
+    <Compile Include="opRepo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\issHospital_Utility\issHospital_Utility.csproj">
+      <Project>{5dd422d6-de24-4d4d-91d5-9e9367c1276f}</Project>
+      <Name>issHospital_Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202302220505108_M1.resx">
+      <DependentUpon>202302220505108_M1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302221033219_M2.resx">
+      <DependentUpon>202302221033219_M2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302221208457_M3.resx">
+      <DependentUpon>202302221208457_M3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302221254043_M4.resx">
+      <DependentUpon>202302221254043_M4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202302230620557_m5.resx">
+      <DependentUpon>202302230620557_m5.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
