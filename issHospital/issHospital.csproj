@@ -129,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemSetupController.cs" />
     <Compile Include="Controllers\OPController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -816,6 +817,7 @@
     <Content Include="Views\OP\Index.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\OP\Create.cshtml" />
+    <Content Include="Views\ItemSetup\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

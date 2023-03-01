@@ -1,0 +1,132 @@
+﻿@model IEnumerable<issHospital_Utility.DTOs.ItemSetupDTO>
+@{
+    ViewBag.Title = "Index";
+    ViewData["Title"] = "Itemsetup";
+}
+<br />
+<br />
+
+<style>
+    .header {
+        margin-top: 10px;
+        border-top-style: solid;
+        border-top-width: 5px;
+        border-top-color: #ff5f04;
+        font-family: Calibri;
+        font-size: 22px;
+    }
+
+    .addNew {
+        padding: 5px;
+        background-color: #00bfff;
+        color: white;
+        float: right !important;
+        margin: 10px;
+        border-radius: 3px;
+        text-decoration: none;
+        width: 10%;
+    }
+
+
+        .addNew:hover {
+            text-decoration: none;
+        }
+</style>
+
+
+<div class="card mb-3">
+    <div class="card-body">
+        <div class="row flex-between-center">
+            <div class="col-sm-auto mb-2 mb-sm-0">
+                <h3 class="mb-0">
+                    ItemSetup- Index page
+                </h3>
+            </div>
+            @Html.ActionLink("Add New", "Create", null, htmlAttributes: new { @class = "addNew btn btn-info" })
+
+        </div>
+    </div>
+</div>
+<div style="overflow: auto; background-color: white; padding: 2%; border-radius: 6px;">
+
+
+    <table class="table datatable-basic table-bordered table-striped table-hover" id="Itemsetup" style="margin-top:10px;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Reorder {</th>
+                <th>Tax</th>
+                <th>Price</th>
+                <th>Menu </th>
+                <th>Commcode</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+            {
+
+
+                <tr>
+                    <td>@item.Index</td>
+                    <td>@item.Data.Reorder</td>
+                    <td>
+
+                        @{
+                            long myNumber = @item.Data.price;
+                            System.Globalization.CultureInfo Indian = new System.Globalization.CultureInfo("hi-IN");
+                        }
+                        @(String.Format(Indian, "{0:N}", myNumber))
+                    </td>
+                    <td>@item.Data.Tax</td>
+                    <td>@item.Data.price</td>
+                    <td>@item.Data.Menu</td>
+                    <td>@item.Data.Commcode</td>
+                </tr>
+
+
+            }
+        </tbody>
+    </table>
+</div>
+<script src="~/Assets/js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#Itemsetup').DataTable({
+            dom: 'Bfrtip',
+            paging: true,
+            buttons: [
+                'copy',
+                {
+                    extend: 'excel',
+                    title: function () {
+                        var printTitle = 'Itemsetup';
+                        return printTitle
+                    }
+                    // messageTop: 'The information in this table is copyright to Sirius Cybernetics Corp.'
+                },
+                {
+                    extend: 'pdf',
+                    title: function () {
+                        var printTitle = 'Itemsetup';
+                        return printTitle
+                    }
+                    //  messageBottom: null
+                },
+                {
+                    extend: 'print',
+                    title: function () {
+                        var printTitle = 'Itemsetup';
+                        return printTitle
+                    }
+                }
+
+            ]
+        });
+    });
+</script>
+
+
+
+
+
