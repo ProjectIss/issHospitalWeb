@@ -28,14 +28,16 @@ namespace issHospital_Repo
 
         public DbSet<TblDept> tblDepts { get; set; }
 
-        public DbSet<TblOpentry> tblReceptions { get; set; }
+        public DbSet<TblOpentry> tblOpentrys { get; set; }
 
         public DbSet<TblReceipt> tblReceipts { get; set; }
 
-        public DbSet<TblPatreg> tblReg { get; set; }
+        public DbSet<TblPatreg> tblPatregs { get; set; }
 
         public DbSet<Tblsupplier> tblsupplier { get; set; }
+
         public DbSet<TblPrescription> tblPrescriptions { get; set; }
+
         public DbSet<Tbldoctors> tblDoctor { get; set; }
 
        
