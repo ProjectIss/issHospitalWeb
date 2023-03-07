@@ -1,72 +1,71 @@
-﻿using issHospital_Business;
-using issHospital_Repo.Models;
-using issHospital_Utility.DTOs;
-using System;
+﻿using System; 
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using issHospital_Utility.DTOs;
+using issHospital_Business;
+using issHospital_Repo.Models;
 
 namespace issHospital.Controllers
 {
-    public class PrescriptionController : Controller
+    public class CustomerSetupController : Controller
     {
-        private Prescription objBusiness = new Prescription();
-        // GET: Prescription
+        public CustomerSetup ObjModel = new CustomerSetup();
+
+        // GET: CustomerSetup
         public ActionResult Index()
         {
-            return View();
+            List<CustomerSetupDTO> objCustomer = ObjModel.getCustomerSetupDetails();
+            return View(objCustomer);
         }
 
-        // GET: Prescription/Details/5
+        // GET: CustomerSetup/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Prescription/Create
+        // GET: CustomerSetup/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Prescription/Create
-        
+        // POST: CustomerSetup/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "billno,age")] TblPrescription prescriptionDTO)
+        public ActionResult Create([Bind(Include ="id,Code,OB,Ccode,CName,Cphone,Cother,FName,Discount,CPadd,isDeleted,deletedBy,deletedOn,updatedBy,UpdatedOn")] TblCustomerSetup customer)
         {
             try
             {
-
-                //  prescriptionDTO.isDeleted = DateTime.Now;
-
-               int res= objBusiness.savePrescription(prescriptionDTO);
-                if (res==1)
+                // TODO: Add insert logic here
+                customer.deletedBy = 12;
+                customer.deletedOn = DateTime.UtcNow;
+                customer.updatedBy = 12;
+                customer.UpdatedOn = DateTime.Now;
+                int res = ObjModel.saveCustomerSetup(customer);
+                if (res == 1)
                 {
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    return View(prescriptionDTO);
+                    return View();
                 }
-                // TODO: Add insert logic here
-
-                
             }
             catch
             {
                 return View();
+            }
         }
-    }
 
-        // GET: Prescription/Edit/5
+        // GET: CustomerSetup/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Prescription/Edit/5
+        // POST: CustomerSetup/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -82,13 +81,13 @@ namespace issHospital.Controllers
             }
         }
 
-        // GET: Prescription/Delete/5
+        // GET: CustomerSetup/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Prescription/Delete/5
+        // POST: CustomerSetup/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace issHospital_Repo.Models
 {
-    public class CustomerSetup
+    public class TblCustomerSetup
     {
         public int Id { get; set; }
         public int Code { get; set; }

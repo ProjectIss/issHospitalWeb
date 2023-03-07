@@ -43,9 +43,19 @@
   <ItemGroup>
     <Compile Include="DTOs\CategoryDTO.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="DTOs\AlterItemDTO.cs" />
+    <Compile Include="DTOs\CategoryDTO.cs" />
+    <Compile Include="DTOs\CustomerSetupDTO.cs" />
+    <Compile Include="DTOs\DeptDTO.cs" />
+    <Compile Include="DTOs\DoctorsDTo.cs" />
+    <Compile Include="DTOs\MenuSetupDTo.cs" />
     <Compile Include="DTOs\DoctorsDTO.cs" />
     <Compile Include="DTOs\ItemSetupDTO.cs" />
     <Compile Include="DTOs\opDTO.cs" />
+    <Compile Include="DTOs\PatregDTO.cs" />
+    <Compile Include="DTOs\PrescriptionDTO.cs" />
+    <Compile Include="DTOs\RecepitDTO.cs" />
+    <Compile Include="DTOs\SupplierDTO.cs" />
     <Compile Include="DTOs\PrescriptionDTO.cs" />
     <Compile Include="DTOs\SupplierDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

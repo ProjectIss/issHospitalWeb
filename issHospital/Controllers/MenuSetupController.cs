@@ -1,72 +1,75 @@
-﻿using issHospital_Business;
-using issHospital_Repo.Models;
-using issHospital_Utility.DTOs;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using issHospital_Utility.DTOs;
+using issHospital_Business;
+using issHospital_Repo.Models;
 
 namespace issHospital.Controllers
 {
-    public class PrescriptionController : Controller
+    public class MenuSetupController : Controller
     {
-        private Prescription objBusiness = new Prescription();
-        // GET: Prescription
+        MenuSetup ObjModel = new MenuSetup();
+        
+        // GET: MenuSetup
         public ActionResult Index()
         {
-            return View();
+            List<MenuSetupDTO> objMenu= ObjModel.getMenuSetupDetails();
+            return View(objMenu);
         }
 
-        // GET: Prescription/Details/5
+        // GET: MenuSetup/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Prescription/Create
+        // GET: MenuSetup/Create
         public ActionResult Create()
         {
+            
             return View();
+            
         }
 
-        // POST: Prescription/Create
-        
+        // POST: MenuSetup/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "billno,age")] TblPrescription prescriptionDTO)
+        public ActionResult Create([Bind(Include = "Id,Code,Name,EmailID,PhoneNo,address,isDeleted,deletedBy,deletedOn,updatedBy,UpdatedOn")] TblMenuSetup MenuMaster)
         {
             try
             {
-
-                //  prescriptionDTO.isDeleted = DateTime.Now;
-
-               int res= objBusiness.savePrescription(prescriptionDTO);
+                // TODO: Add insert logic here
+                MenuMaster.deletedBy = 12;
+                MenuMaster.deletedOn = DateTime.UtcNow;
+                MenuMaster.updatedBy = 12;
+                MenuMaster.UpdatedOn = DateTime.Now;
+                int res= ObjModel.saveMenuSetup(MenuMaster);
                 if (res==1)
                 {
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    return View(prescriptionDTO);
+                    return View();
                 }
-                // TODO: Add insert logic here
-
                 
             }
             catch
             {
                 return View();
+            }
         }
-    }
 
-        // GET: Prescription/Edit/5
+        // GET: MenuSetup/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Prescription/Edit/5
+        // POST: MenuSetup/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -82,13 +85,13 @@ namespace issHospital.Controllers
             }
         }
 
-        // GET: Prescription/Delete/5
+        // GET: MenuSetup/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Prescription/Delete/5
+        // POST: MenuSetup/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

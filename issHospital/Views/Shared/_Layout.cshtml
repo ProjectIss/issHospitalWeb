@@ -107,14 +107,15 @@
                                         </a><!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="dashboard/crm.html">
-                                            <div class="d-flex align-items-center"><span class="nav-link-text ps-1">CustomberSetup</span></div>
-                                        </a><!-- more inner pages-->
+                                        @Html.ActionLink("CustomerSetup", "Index", "Customer", null, new { @class = "nav-link" })
+                                        @*<a class="nav-link" href="dashboard/crm.html">
+                                            <div class="d-flex align-items-center"><span class="nav-link-text ps-1">CustomerSetup</span></div>
+                                          </a>*@<!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="dashboard/e-commerce.html">
-                                            <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Item setup</span></div>
-                                        </a><!-- more inner pages-->
+                                           <a class="nav-link" href="dashboard/e-commerce.html">
+                                             <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Item setup</span></div>
+                                           </a><!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="dashboard/lms.html">
@@ -122,9 +123,10 @@
                                         </a><!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="dashboard/project-management.html">
+                                        @Html.ActionLink("Department","Index","Dept",null,new { @class="nav-link"})
+                                        @*<a class="nav-link" href="dashboard/project-management.html">
                                             <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Dept</span></div>
-                                        </a><!-- more inner pages-->
+                                        </a>*@<!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="dashboard/saas.html">
@@ -132,15 +134,13 @@
                                         </a><!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="dashboard/support-desk.html">
-                                            <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Menu Setup</span><span class="badge rounded-pill ms-2 badge-soft-success">New</span></div>
-                                        </a><!-- more inner pages-->
+                                        @Html.ActionLink("Menu Setup", "Index", "MenuSetup", null, new { @class = "nav-link" })
                                     </li>
                                     <li class="nav-item">
 
                                         @Html.ActionLink("Opentry", "Index", "OP", null, new { @class = "nav-link" })
                                         @*<a class="nav-link" href="dashboard/support-desk.html">
-            <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Opentry</span><span class="badge rounded-pill ms-2 badge-soft-success">New</span></div>
+                                         <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Opentry</span><span class="badge rounded-pill ms-2 badge-soft-success">New</span></div>
         </a>*@<!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
@@ -154,9 +154,10 @@
                                         </a><!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="dashboard/support-desk.html">
-                                            <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Receipt</span><span class="badge rounded-pill ms-2 badge-soft-success">New</span></div>
-                                        </a><!-- more inner pages-->
+                                        @Html.ActionLink("Receipt", "Index", "Receipt", null, new { @class = "nav-link" })
+                                        @*<a class="nav-link" href="dashboard/support-desk.html">
+            <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Receipt</span><span class="badge rounded-pill ms-2 badge-soft-success">New</span></div>
+        </a>*@<!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="dashboard/support-desk.html">
