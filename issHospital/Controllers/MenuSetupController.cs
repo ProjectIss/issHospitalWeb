@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using issHospital_Utility.DTOs;
+using issHospital_Business;
+using issHospital_Repo.Models;
 
 namespace issHospital.Controllers
 {
     public class MenuSetupController : Controller
     {
+        MenuSetup ObjModel = new MenuSetup();
+        
         // GET: MenuSetup
         public ActionResult Index()
         {
-            return View();
+            List<MenuSetupDTO> objMenu= ObjModel.getMenuSetupDetails();
+            return View(objMenu);
         }
 
         // GET: MenuSetup/Details/5
@@ -23,18 +29,33 @@ namespace issHospital.Controllers
         // GET: MenuSetup/Create
         public ActionResult Create()
         {
+            
             return View();
+            
         }
 
         // POST: MenuSetup/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Code,Name,EmailID,PhoneNo,address,isDeleted,deletedBy,deletedOn,updatedBy,UpdatedOn")] TblMenuSetup MenuMaster)
         {
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                MenuMaster.deletedBy = 12;
+                MenuMaster.deletedOn = DateTime.UtcNow;
+                MenuMaster.updatedBy = 12;
+                MenuMaster.UpdatedOn = DateTime.Now;
+                int res= ObjModel.saveMenuSetup(MenuMaster);
+                if (res==1)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
+                
             }
             catch
             {

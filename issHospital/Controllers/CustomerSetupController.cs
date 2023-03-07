@@ -1,17 +1,23 @@
-﻿using System;
+﻿using System; 
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using issHospital_Utility.DTOs;
+using issHospital_Business;
+using issHospital_Repo.Models;
 
 namespace issHospital.Controllers
 {
     public class CustomerSetupController : Controller
     {
+        public CustomerSetup ObjModel = new CustomerSetup();
+
         // GET: CustomerSetup
         public ActionResult Index()
         {
-            return View();
+            List<CustomerSetupDTO> objCustomer = ObjModel.getCustomerSetupDetails();
+            return View(objCustomer);
         }
 
         // GET: CustomerSetup/Details/5
@@ -28,13 +34,24 @@ namespace issHospital.Controllers
 
         // POST: CustomerSetup/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create([Bind(Include ="id,Code,OB,Ccode,CName,Cphone,Cother,FName,Discount,CPadd,isDeleted,deletedBy,deletedOn,updatedBy,UpdatedOn")] TblCustomerSetup customer)
         {
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                customer.deletedBy = 12;
+                customer.deletedOn = DateTime.UtcNow;
+                customer.updatedBy = 12;
+                customer.UpdatedOn = DateTime.Now;
+                int res = ObjModel.saveCustomerSetup(customer);
+                if (res == 1)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
             }
             catch
             {
