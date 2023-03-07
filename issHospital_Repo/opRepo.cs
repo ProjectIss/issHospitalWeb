@@ -15,18 +15,30 @@ namespace issHospital_Repo
 
         public List<opDTO> getOPDetails()
         {
-
-            List<opDTO> lstOP = db.tblReceptions.Where(x => x.isDeleted == false).Select(x=> new opDTO()
+            try
             {
-               Id=x.Id,
-               Age =x.Age,
-               Amount =x.Amount,
-               BalAmt=x.BalAmt,
-               OpNo = x.OpNo,
-               PaidAmt = x.PaidAmt
-            }).ToList();
+                List<opDTO> lstOP = db.tblOpentries.Where(x => x.isDeleted == false).Select(x => new opDTO()
+                {
+                    Id = x.Id,
+                    Age = x.Age,
+                    Amount = x.Amount,
+                    BalAmt = x.BalAmt,
+                    OpNo = x.OpNo,
+                    PaidAmt = x.PaidAmt
+                }).ToList();
 
-            return lstOP;
+                return lstOP;
+
+            }
+            catch (Exception)
+            {
+
+                return new List<opDTO>();
+
+
+            }
+          
+
         }
     }
 }

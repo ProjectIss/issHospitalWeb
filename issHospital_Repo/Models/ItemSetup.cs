@@ -10,7 +10,7 @@ namespace issHospital_Repo.Models
         public int Id { get; set; }
         public int Reorder { get; set; }
         public int Tax { get; set; }
-        public int Sprice { get; set; }
+        public int Price { get; set; }
         public string Menu { get; set; }
         public string Commcode { get; set; }
         public string Schedule { get; set; }

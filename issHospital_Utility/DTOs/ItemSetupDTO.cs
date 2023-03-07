@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace issHospital_Utility.DTOs
 {
-   public class ItemSetupDTO
+   public class ItemsetupDTO
     {
         public int Id { get; set; }
         public int Reorder { get; set; }

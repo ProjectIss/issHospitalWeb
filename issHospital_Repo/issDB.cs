@@ -11,6 +11,7 @@ namespace issHospital_Repo
 {
     public class issDB: DbContext
     {
+        internal IEnumerable<object> prescriptions;
 
         public issDB()
             : base("name=ISSModel")
@@ -28,15 +29,18 @@ namespace issHospital_Repo
 
         public DbSet<TblDept> tblDepts { get; set; }
 
-        public DbSet<TblOpentry> tblReceptions { get; set; }
+        public DbSet<TblOpentry> tblOpentries { get; set; }
 
         public DbSet<TblReceipt> tblReceipts { get; set; }
 
         public DbSet<TblPatreg> tblReg { get; set; }
 
         public DbSet<Tblsupplier> tblsupplier { get; set; }
+
         public DbSet<TblPrescription> tblPrescriptions { get; set; }
+
         public DbSet<Tbldoctors> tblDoctor { get; set; }
+
 
        
 
