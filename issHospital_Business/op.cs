@@ -16,6 +16,7 @@ namespace issHospital_Business
        public List<opDTO> getOpDetails()
        {
         List<opDTO> lstOP = objRepo.getOPDetails();
+
         return lstOP;
        }
   }

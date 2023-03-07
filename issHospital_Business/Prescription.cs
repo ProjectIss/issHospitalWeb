@@ -11,9 +11,11 @@ namespace issHospital_Business
     public  class Prescription
     {
         private presRepo objRepo = new presRepo();
+
         public int savePrescription(TblPrescription tblPrescription)
         {
             int resp=objRepo.savePrescription(tblPrescription);
+
             return resp;
         }
     }

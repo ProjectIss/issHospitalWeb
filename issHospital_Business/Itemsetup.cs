@@ -13,9 +13,9 @@ namespace issHospital_Business
   {
       private itemRepo objRepo = new itemRepo();
 
-      public List<SupplierDTO> getOpDetails()
+      public List<ItemSetupDTO> getItemsetupDetails()
     {
-        List<SupplierDTO> lstItemSetup = objRepo.getOpDetails();
+        List<ItemSetupDTO> lstItemSetup = objRepo.getItemsetupDetails();
 
        return lstItemSetup;
     }

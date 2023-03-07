@@ -10,11 +10,11 @@ namespace issHospital_Repo
     public class ItemRepo
     {
         private issDB db = new issDB();
-        public List<SupplierDTO> getItemSetupDetails()
+        public List<ItemSetupDTO> getItemSetupDetails()
         {
             try
             {
-                List<SupplierDTO> lstItemSetup = db.itemSetups.Where(x => x.isDeleted == false).Select(x => new SupplierDTO
+                List<ItemSetupDTO> lstItemSetup = db.itemSetups.Where(x => x.isDeleted == false).Select(x => new ItemSetupDTO
                 {
                   Id=x.Id,
                   Reorder=x.Reorder,
@@ -30,7 +30,7 @@ namespace issHospital_Repo
             catch (Exception )
             {
 
-                return new List<SupplierDTO>();
+                return new List<ItemSetupDTO>();
             }
         }
     }
