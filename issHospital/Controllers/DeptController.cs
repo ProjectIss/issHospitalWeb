@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using issHospital_Repo.Models;
+using issHospital_Business;
+using issHospital_Utility.DTOs;
 
 namespace issHospital.Controllers
 {
     public class DeptController : Controller
     {
+        private Dept objDept = new Dept();
         // GET: Dept
         public ActionResult Index()
         {
-            return View();
+            List<DeptDTO> objdept = objDept.getDeptDetails();
+            return View(objdept);
         }
 
         // GET: Dept/Details/5
@@ -28,13 +33,27 @@ namespace issHospital.Controllers
 
         // POST: Dept/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,isDeleted,deletedBy,deletedOn,updatedBy,UpdatedOn,Department,Description")] TblDept tblDept)
         {
             try
             {
                 // TODO: Add insert logic here
+                tblDept.deletedBy = 23;
+                tblDept.deletedOn = DateTime.UtcNow;
+                tblDept.updatedBy = 23;
+                tblDept.UpdatedOn = DateTime.Now;
+                int nReturn = objDept.SaveDepartment(tblDept);
+                if (nReturn==1)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return View();
+                }
 
-                return RedirectToAction("Index");
+                
             }
             catch
             {

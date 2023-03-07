@@ -1,0 +1,29 @@
+﻿@model IEnumerable<issHospital_Utility.DTOs.CustomerSetupDTO>
+
+
+@{
+    ViewBag.Title = "Create";
+    ViewData["Title"] = " customerSetup-Add";
+}
+
+@using (Html.BeginForm())
+ {
+
+    @Html.AntiForgeryToken()
+
+    <label>Id</label>
+    <input type="number" id="Id" name="Id" />
+    <label>Code</label>
+    <input type="number" id="Code" name="Code" />
+    <label>OB</label>
+    <input type="text" id="OB" name="OB" />
+    <label>Ccode</label>
+    <input type="text" id="Ccode" name="Ccode" />
+    <label>CName</label>
+    <input type="text" id="CName" name="CName" />
+    <label>CPhone</label>
+    <input type="number" id="CPhone" name="CPhone" />
+    <input type="submit" value="Add" />
+
+
+ }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace issHospital_Utility.DTOs
 {
-    public class MenuSetupDTo
+    public class MenuSetupDTO
     {
         public int Id { get; set; }
         public int Code { get; set; }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<issHospital_Utility.DTOs.MenuSetupDTo>
+﻿@model IEnumerable<issHospital_Utility.DTOs.MenuSetupDTO>
 @{
     ViewBag.Title = "Index";
     ViewData["Title"] = " MenuSetup";
@@ -62,22 +62,30 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+            @if (Model!=null)
             {
+                foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+                {
 
 
 
-            <tr>
-                <td>@item.Data.Id</td>
-                <td>@item.Data.Code</td>
-                <td>@item.Data.Name</td>
-                <td>@item.Data.EmailID</td>
-                <td>@item.Data.PhoneNo</td>
-                <td>@item.Data.address</td>
-            </tr>
+                    <tr>
+                        <td>@item.Index</td>
+                        <td>@item.Data.Code</td>
+                        <td>@item.Data.Name</td>
+                        <td>@item.Data.EmailID</td>
+                        <td>@item.Data.PhoneNo</td>
+                        <td>@item.Data.address</td>
+                    </tr>
 
 
+                }
             }
+            else
+            {
+                <tr style="column-span:6;"></tr>
+            }
+
         </tbody>
     </table>
 </div>

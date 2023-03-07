@@ -54,27 +54,28 @@
         <thead>
             <tr>
                 <th>ID </th>
-                <th>Isdeleted</th>
-                <th> DeletedBy</th>
-                <th>DeletedOn</th>
-                <th>UpDatedBy</th>
+                <th>Department</th>
+                <th> Description</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+            @if (Model != null)
             {
+                foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+                {
+                    <tr>
+                        <td>@item.Index</td>
+                        <td>@item.Data.Department</td>
+                        <td>@item.Data.Description</td>
+                    </tr>
 
-
-
-            <tr>
-                <td>@item.Data.Id</td>
-                <td>@item.Data.isDeleted</td>
-                <td>@item.Data.deletedBy</td>
-                <td>@item.Data.deletedOn</td>
-                <td>@item.Data.updatedBy</td>
-            </tr>
-
-
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3">No Record</td>
+                </tr>
             }
         </tbody>
     </table>
