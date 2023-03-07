@@ -1,0 +1,18 @@
+﻿@model IEnumerable<issHospital_Utility.DTOs.PrescriptionDTO>
+
+@{
+    ViewBag.Title = "Create";
+    ViewData["Title"] = "Prescription - Add";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <label>Bill NO</label>
+    <input type="number" id="billno" name="billno" />
+    <label>AGE</label>
+    <input type="number" id="age" name="age" />
+    <input type="submit"  value="ADD"/>
+}
+

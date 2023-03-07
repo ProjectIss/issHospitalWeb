@@ -131,6 +131,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemSetupController.cs" />
     <Compile Include="Controllers\OPController.cs" />
+    <Compile Include="Controllers\PrescriptionController.cs" />
+    <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -818,10 +820,12 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\OP\Create.cshtml" />
     <Content Include="Views\ItemSetup\Index.cshtml" />
+    <Content Include="Views\Prescription\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Supplier\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -840,6 +844,10 @@
     <ProjectReference Include="..\issHospital_Business\issHospital_Business.csproj">
       <Project>{e0bc6f89-7b92-4b4e-9906-d6a02c640e9a}</Project>
       <Name>issHospital_Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\issHospital_Repo\issHospital_Repo.csproj">
+      <Project>{1A26079F-0AB8-4BAC-9262-C27936352A80}</Project>
+      <Name>issHospital_Repo</Name>
     </ProjectReference>
     <ProjectReference Include="..\issHospital_Utility\issHospital_Utility.csproj">
       <Project>{5dd422d6-de24-4d4d-91d5-9e9367c1276f}</Project>
