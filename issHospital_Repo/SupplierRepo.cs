@@ -16,13 +16,23 @@ namespace issHospital_Repo
         {
             try
             {
-                List<SupplierDTO> lstSupplier = db.Suppliers.Where(x => x.isDeleted == false).Select(x => new SupplierDTO
+                List<SupplierDTO> lstSupplier = db.tblsupplier.Where(x => x.isDeleted == false).Select
+                    (x => new SupplierDTO
+                    {
+                        Ccode=x.Ccode,
+                        CName=x.CName,
+                        Code=x.Code,
+                        Cphone=x.Cphone,
+                        Id=x.Id,
+                        OB=x.OB
+                    }
+            ).ToList();
 
-            }) Tolist();
-
-            catch (Exception)
+                return lstSupplier;
+            }
+            catch (Exception ex)
             {
-
+                //Create Error log
                 throw;
             }
 

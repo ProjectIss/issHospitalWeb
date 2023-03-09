@@ -12,9 +12,9 @@ namespace issHospital_Business
 
         private DoctorsRepo objRepo = new DoctorsRepo();
 
-        public List<DoctorsDTO> getDoctorDetails()
+        public List<DoctorDTO> getDoctorDetails()
         {
-            List<DoctorsDTO> lstDoctor = objRepo.getDoctorsDetails();
+            List<DoctorDTO> lstDoctor = objRepo.getDoctorsDetails();
 
             return lstDoctor;
         }

@@ -10,12 +10,12 @@ namespace issHospital_Repo
     public class DoctorsRepo
     {
         private issDB db = new issDB();
-        public List<DoctorsDTO> getDoctorsDetails()
+        public List<DoctorDTO> getDoctorsDetails()
        
         {
             try
             {
-                List<DoctorsDTO> lstDoctor = db.tblDoctor.Where(x => x.isDeleted == false).Select(x => new DoctorsDTO
+                List<DoctorDTO> lstDoctor = db.tblDoctor.Where(x => x.isDeleted == false).Select(x => new DoctorDTO
                 {
                  doctorId=x.doctorId,
                  ENo=x.ENo,
@@ -29,7 +29,7 @@ namespace issHospital_Repo
             {
 
               
-                return new List<DoctorsDTO>();
+                return new List<DoctorDTO>();
             }
         }
     }

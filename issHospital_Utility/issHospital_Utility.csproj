@@ -47,9 +47,8 @@
     <Compile Include="DTOs\CategoryDTO.cs" />
     <Compile Include="DTOs\CustomerSetupDTO.cs" />
     <Compile Include="DTOs\DeptDTO.cs" />
-    <Compile Include="DTOs\DoctorsDTo.cs" />
+    <Compile Include="DTOs\DoctorDTO.cs" />
     <Compile Include="DTOs\MenuSetupDTo.cs" />
-    <Compile Include="DTOs\DoctorsDTO.cs" />
     <Compile Include="DTOs\ItemSetupDTO.cs" />
     <Compile Include="DTOs\opDTO.cs" />
     <Compile Include="DTOs\PatregDTO.cs" />

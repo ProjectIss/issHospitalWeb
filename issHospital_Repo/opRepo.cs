@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace issHospital_Repo
 {
-     public class opRepo
+    public class opRepo
     {
         private issDB db = new issDB();
 
         public List<opDTO> getOPDetails()
         {
             try
-            {
-                List<opDTO> lstOP = db.tblOpentries.Where(x => x.isDeleted == false).Select(x => new opDTO()
+            {// changed by Rabekka tblOpentry 
+                List<opDTO> lstOP = db.tblOpentry.Where(x => x.isDeleted == false).Select(x => new opDTO()
                 {
                     Id = x.Id,
                     Age = x.Age,
@@ -37,7 +37,7 @@ namespace issHospital_Repo
 
 
             }
-          
+
 
         }
     }
