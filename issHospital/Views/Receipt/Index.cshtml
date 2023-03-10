@@ -39,7 +39,7 @@
         <div class="row flex-between-center">
             <div class="col-sm-auto mb-2 mb-sm-0">
                 <h3 class="mb-0">
-                    Recepit- Index page
+                    Receipt- Index page
                 </h3>
             </div>
             @Html.ActionLink("Add New", "Create", null, htmlAttributes: new { @class = "addNew btn btn-info" })
@@ -53,7 +53,6 @@
     <table class="table datatable-basic table-bordered table-striped table-hover" id="OpEntry" style="margin-top:10px;">
         <thead>
             <tr>
-                <th>Id </th>
                 <th>SlNo</th>
                 <th> Amount</th>
                 <th>Age</th>
@@ -62,22 +61,25 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+            @if (Model != null )
             {
+                foreach (var item in Model.Select((x, i) => new { Data = x, Index = i + 1 }))
+                {
 
 
 
-                <tr>
-                    <td>@item.Data.Id</td>
-                    <td>@item.Data.SlNo</td>
-                    <td>@item.Data.Amount</td>
-                    <td>@item.Data.Age</td>
-                    <td>@item.Data.Name</td>
-                    <td>@item.Data.Doctor</td>
-                </tr>
+                    <tr>
+                        <td>@item.Data.SlNo</td>
+                        <td>@item.Data.Amount</td>
+                        <td>@item.Data.Age</td>
+                        <td>@item.Data.Name</td>
+                        <td>@item.Data.Doctor</td>
+                    </tr>
 
 
+                }
             }
+
         </tbody>
     </table>
 </div>

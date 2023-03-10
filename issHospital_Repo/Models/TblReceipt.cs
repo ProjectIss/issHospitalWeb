@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace issHospital_Repo.Models
 {
-    public class TblReceipt
+    public class TblReceipts
     {
         public int Id { get; set; }
         public int SlNo { get; set; }
@@ -30,5 +30,10 @@ namespace issHospital_Repo.Models
         public DateTime deletedOn { get; set; }
         public int updatedBy { get; set; }
         public DateTime UpdatedOn { get; set; }
+
+        //public static int SaveReceipt(object tblReceipt)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

@@ -49,9 +49,9 @@ namespace issHospital_Repo
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                
                 throw;
             }
                     

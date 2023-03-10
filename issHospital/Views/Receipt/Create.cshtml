@@ -1,0 +1,44 @@
+﻿@model IEnumerable<issHospital_Repo.Models.TblReceipts>
+
+
+@{
+    ViewBag.Title = "Create";
+    ViewData["Title"] = " Recepit-Add";
+}
+
+@using (Html.BeginForm())
+ {
+
+    @Html.AntiForgeryToken()
+
+
+   <div class="col-md-12 center-block" style="text-align:center;">
+     <div class="col-md-6 center-block">
+        <div class="col-md-4"> <label>SlNo</label> </div>
+        <div class="col-md-8"> <input type="number" id="SlNo" name="SlNo" /></div>
+     </div>
+     <div class="col-md-6 center-block">
+        <div class="col-md-4"><label>Amount</label></div>
+        <div class="col-md-8"><input type="number" id="Amount" name="Amount" /></div>
+     </div>
+     <div class="col-md-6 center-block">
+        <div class="col-md-4"><label>Age</label></div>
+        <div class="col-md-8"><input type="number" id="Age" name="Age" /></div>
+     </div>
+     <div class="col-md-6 center-block">
+        <div class="col-md-4"><label>Name</label></div>
+        <div class="col-md-8"><input type="text" id="Name" name="Name" /></div>
+     </div>
+     <div class="col-md-6 center-block">
+        <div class="col-md-4"><label>Doctor</label></div>
+        <div class="col-md-8"><input type="text" id="Doctor" name="Doctor" /></div>
+     </div>
+
+     <div class="col-md-6 center-block">
+        <input type="submit" value="Add" />
+     </div>
+
+
+   </div>
+
+ }

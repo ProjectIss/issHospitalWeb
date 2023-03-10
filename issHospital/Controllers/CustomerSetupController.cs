@@ -34,6 +34,7 @@ namespace issHospital.Controllers
 
         // POST: CustomerSetup/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include ="id,Code,OB,Ccode,CName,Cphone,Cother,FName,Discount,CPadd,isDeleted,deletedBy,deletedOn,updatedBy,UpdatedOn")] TblCustomerSetup customer)
         {
             try
