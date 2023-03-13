@@ -1,0 +1,42 @@
+﻿@model IEnumerable<issHospital_Utility.DTOs.PatregDTO>
+
+
+@{
+    ViewBag.Title = "Create";
+    ViewData["Title"] = " Patreg-Add";
+}
+
+@using (Html.BeginForm())
+ {
+
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-12 center-block" style="text-align:center;">
+        <div class="col-md-6 center-block">
+            <div class="col-md-4"> <label>UHID</label> </div>
+            <div class="col-md-8"> <input type="text" id="UHID" name="UHID" /></div>
+        </div>
+        <div class="col-md-6 center-block">
+            <div class="col-md-4"><label>Age</label></div>
+            <div class="col-md-8"><input type="number" id="Age" name="Age" /></div>
+        </div>
+        <div class="col-md-6 center-block">
+            <div class="col-md-4"><label>Name</label></div>
+            <div class="col-md-8"><input type="text" id="Name" name="Name" /></div>
+        </div>
+        <div class="col-md-6 center-block">
+            <div class="col-md-4"><label>FatherName</label></div>
+            <div class="col-md-8"><input type="text" id="FatherName" name="FatherName" /></div>
+        </div>
+        <div class="col-md-6 center-block">
+            <div class="col-md-4"><label>Add</label></div>
+            <div class="col-md-8"><input type="number" id="Add" name="Add" /></div>
+        </div>
+
+        <div class="col-md-6 center-block">
+            <input type="submit" value="Add" />
+        </div>
+
+
+    </div>
+ }

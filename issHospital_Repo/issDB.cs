@@ -31,7 +31,7 @@ namespace issHospital_Repo
 
         public DbSet<TblOpentry> tblOpentry { get; set; }
 
-        public DbSet<TblReceipt> tblReceipts { get; set; }
+        public DbSet<TblReceipts> tblReceipts { get; set; }
 
         public DbSet<TblPatreg> tblPatReg { get; set; }
 

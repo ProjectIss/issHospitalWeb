@@ -112,7 +112,8 @@
                         deletedOn = c.DateTime(nullable: false),
                         updatedBy = c.Int(nullable: false),
                         UpdatedOn = c.DateTime(nullable: false),
-                    })
+                        UHID = c.String(),
+                })
                 .PrimaryKey(t => t.Id);
             
             CreateTable(

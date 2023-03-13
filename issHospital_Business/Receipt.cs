@@ -1,4 +1,5 @@
 ﻿using issHospital_Repo;
+using issHospital_Repo.Models;
 
 using issHospital_Utility.DTOs;
 using System;
@@ -11,7 +12,7 @@ namespace issHospital_Business
 {
     public class Receipt
     {
-        private ReceiptRepo objRepo = new issHospital_Repo.ReceiptRepo();
+        private ReceiptRepo objRepo = new ReceiptRepo();
 
         public List<ReceiptDTO> getReceiptDetails()
         {
@@ -19,6 +20,13 @@ namespace issHospital_Business
 
             return lstReceipt;
         }
+
+        public int saveReceipt(TblReceipts Receipt)
+        {
+            int Respance = objRepo.SaveReceipt(Receipt);
+            return Respance;
+        }
+
     }
 
 }

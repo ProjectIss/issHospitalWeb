@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace issHospital_Utility.DTOs
 {
-   public class DoctorsDTo
+   public class DoctorsDTO
     {
         public int Id { get; set; }
         public int doctorId { get; set; }

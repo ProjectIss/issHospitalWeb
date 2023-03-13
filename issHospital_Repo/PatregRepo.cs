@@ -29,12 +29,23 @@ namespace issHospital_Repo
 
             }
 
-            catch (Exception Ex)
+            catch (Exception ex)
             {
 
                 return new List<PatregDTO>();
             }
 
         }
+
+        public int SavePatreg(Models.TblPatreg patreg)
+
+        {
+            int a = 1;
+            db.tblPatReg.Add(patreg);
+            db.SaveChanges();
+            return a;
+
+        }
+
     }
 }

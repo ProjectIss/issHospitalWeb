@@ -6,6 +6,10 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
+using System.Data.Entity;
+using issHospital_Repo.Models;
+using issHospital_Repo;
+
 namespace issHospital
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -16,6 +20,8 @@ namespace issHospital
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //Database.SetInitializer<issDB>(new DropCreateDatabaseIfModelChanges<issDB>());
         }
     }
 }

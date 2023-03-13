@@ -16,7 +16,7 @@ namespace issHospital_Repo
             {
                 List<ReceiptDTO> lstReceipt = db.tblReceipts.Where(x => x.isDeleted == false).Select(x => new ReceiptDTO
                 {
-                    Id = x.Id,
+ 
                     SlNo = x.SlNo,
                     Amount = x.Amount,
                     Age = x.Age,
@@ -29,12 +29,23 @@ namespace issHospital_Repo
 
             }
 
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return new List<ReceiptDTO>();
             }
 
         }
+        
+        public int SaveReceipt(Models.TblReceipts Receipt)
+
+        {
+            int a = 1;
+            db.tblReceipts.Add(Receipt);
+            db.SaveChanges();
+            return a;
+
+        }
+
     }
 }
