@@ -9,21 +9,21 @@ using System.Threading.Tasks;
 
 namespace issHospital_Repo
 {
-    public class issDB: DbContext
+    public class issDB : DbContext
     {
-       
+
 
         public issDB()
             : base("name=ISSModel")
         {
         }
         public DbSet<TblMenuSetup> MenuSetups { get; set; }
-               
-        public DbSet <TblCustomerSetup> CustomerSetups { get; set; }
+
+        public DbSet<TblCustomerSetup> CustomerSetups { get; set; }
 
         public DbSet<ItemSetup> itemSetups { get; set; }
-        
-        public DbSet<TblCategory> tblcategories { get; set; }
+
+        public DbSet<TblCategory> tblCategory { get; set; }
 
         public DbSet<TblAlterItem> tblAlterItems { get; set; }
 
@@ -36,8 +36,8 @@ namespace issHospital_Repo
         public DbSet<TblPatreg> tblPatReg { get; set; }
 
         public DbSet<Tblsupplier> tblsupplier { get; set; }
-        public DbSet<TblPrescription> tblPrescriptions { get; set; }
+        public DbSet<TblPrescription> tblPrescription { get; set; }
         public DbSet<Tbldoctors> tblDoctor { get; set; }
-       
+
     }
 }

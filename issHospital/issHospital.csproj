@@ -847,6 +847,10 @@
     <Content Include="Views\AlterItem\Create.cshtml" />
     <Content Include="Views\Patreg\Create.cshtml" />
     <Content Include="Views\Receipt\Create.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Doctors\Create.cshtml" />
+    <Content Include="Views\Prescription\Create.cshtml" />
+    <Content Include="Views\Supplier\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

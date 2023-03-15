@@ -80,6 +80,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ItemSetup.cs" />
     <Compile Include="Models\TblCustomerSetup.cs" />
+    <Compile Include="Models\TblItemSetup.cs" />
     <Compile Include="Models\TblMenuSetup.cs" />
     <Compile Include="Models\TblAlterItem.cs" />
     <Compile Include="Models\TblCategory.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Models\Tblsupplier.cs" />
     <Compile Include="opRepo.cs" />
     <Compile Include="PatregRepo.cs" />
+    <Compile Include="PrescriptionRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReceiptRepo.cs" />
   </ItemGroup>

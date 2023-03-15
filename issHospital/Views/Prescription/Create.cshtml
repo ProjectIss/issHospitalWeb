@@ -1,8 +1,8 @@
-﻿@model IEnumerable<issHospital_Utility.DTOs.opDTO>
+﻿@model IEnumerable<issHospital_Utility.DTOs.PrescriptionDTO>
 
 @{
     ViewBag.Title = "Create";
-    ViewData["Title"] = "op - Add";
+    ViewData["Title"] = "Prescription - Add";
 }
 
 <style>
@@ -38,32 +38,31 @@
         <div class="row flex-between-center">
             <div class="col-sm-auto mb-2 mb-sm-0">
                 <h3 class="mb-0">
-                    Opentry - Create page
+                    Prescription - Create page
                 </h3>
             </div>
 
         </div>
     </div>
 </div>
-
 <div class="card md-3" style="margin-top:1%">
     @using (Html.BeginForm())
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
         <div class="card-body form-group">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="col-lg-4" style="text-align:left; font-weight:600;"><label>Amount</label></div>
+                    <div class="col-lg-4" style="text-align:left; font-weight:600;"><label>BillNo</label></div>
                     <div class="col-lg-3" style="text-align:center"> </div>
-                    <div class="col-lg-4"><input type="number" id="Amount" name="Amount" class="from-control col-md-3" style="width:460px;" /></div>
+                    <div class="col-lg-4"><input type="number" id="BillNo" name="BillNo" class="from-control col-md-3" style="width:460px;" /></div>
 
                 </div>
 
                 <div class="col-md-6">
-                    <div class="col-lg-4" style="text-align:left; font-weight:600;"><label>BalAmt</label></div>
+                    <div class="col-lg-4" style="text-align:left; font-weight:600;"><label>Age</label></div>
                     <div class="col-lg-3" style="text-align:center"> </div>
-                    <div class="col-lg-4"><input type="number" id="BalAmt" name="BalAmt" class="from-control col-md-3" style="width:460px;" /></div>
+                    <div class="col-lg-4"><input type="number" id="Age" name="Age" class="from-control col-md-3" style="width:460px;" /></div>
 
                 </div>
             </div>
@@ -78,5 +77,5 @@
 
         </div>
 
-     }
+    }
 </div>
