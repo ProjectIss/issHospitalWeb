@@ -77,6 +77,10 @@
     <Compile Include="Migrations\202302230620557_m5.designer.cs">
       <DependentUpon>202302230620557_m5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202303151001309_m6.cs" />
+    <Compile Include="Migrations\202303151001309_m6.designer.cs">
+      <DependentUpon>202303151001309_m6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ItemSetup.cs" />
     <Compile Include="Models\TblCustomerSetup.cs" />
@@ -122,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202302230620557_m5.resx">
       <DependentUpon>202302230620557_m5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202303151001309_m6.resx">
+      <DependentUpon>202303151001309_m6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
