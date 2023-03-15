@@ -11,14 +11,15 @@ namespace issHospital_Repo
 {
     public class issDB: DbContext
     {
+       
 
         public issDB()
             : base("name=ISSModel")
         {
         }
-        public DbSet<TblMenuSetup> manuSertups { get; set; }
+        public DbSet<TblMenuSetup> MenuSetups { get; set; }
                
-        public DbSet <CustomerSetup> CustomerSetups { get; set; }
+        public DbSet <TblCustomerSetup> CustomerSetups { get; set; }
 
         public DbSet<ItemSetup> itemSetups { get; set; }
         
@@ -28,25 +29,15 @@ namespace issHospital_Repo
 
         public DbSet<TblDept> tblDepts { get; set; }
 
-        public DbSet<TblOpentry> tblReceptions { get; set; }
+        public DbSet<TblOpentry> tblOpentry { get; set; }
 
         public DbSet<TblReceipt> tblReceipts { get; set; }
 
-        public DbSet<TblPatreg> tblReg { get; set; }
+        public DbSet<TblPatreg> tblPatReg { get; set; }
 
         public DbSet<Tblsupplier> tblsupplier { get; set; }
         public DbSet<TblPrescription> tblPrescriptions { get; set; }
         public DbSet<Tbldoctors> tblDoctor { get; set; }
-
        
-
-
-
-
-
-
-
-
-
     }
 }
