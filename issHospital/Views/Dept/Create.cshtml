@@ -1,0 +1,85 @@
+﻿@model IEnumerable<issHospital_Utility.DTOs.DeptDTO>
+
+
+@{
+    ViewBag.Title = "Create";
+    ViewData["Title"] = " Dept-Add";
+}
+
+<style>
+    .header {
+        margin-top: 10px;
+        border-top-style: solid;
+        border-top-width: 5px;
+        border-top-color: #ff5f04;
+        font-family: Calibri;
+        font-size: 22px;
+    }
+
+    .addNew {
+        padding: 5px;
+        background-color: #00bfff;
+        color: white;
+        float: right !important;
+        margin: 10px;
+        border-radius: 3px;
+        text-decoration: none;
+        width: 10%;
+    }
+
+
+        .addNew:hover {
+            text-decoration: none;
+        }
+</style>
+
+<div class="card mb-3" style="margin-top: 6%;">
+    <div class="card-body">
+        <div class="row flex-between-center">
+            <div class="col-sm-auto mb-2 mb-sm-0">
+                <h3 class="mb-0">
+                    Department - Create page
+                </h3>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="card mb-3" style="margin-top: 1%;">
+
+    @using (Html.BeginForm())
+    {
+
+        @Html.AntiForgeryToken()
+
+        <div class="card-body form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-lg-4" style="text-align: left; font-weight: 600;">Department</div>
+                    <div class="col-lg-3" style="text-align:center">  </div>
+                    <div class="col-lg-4"><input type="text" id="Departement" name="Department" class="form-control col-md-3" style="width:560px;" /> </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="col-lg-4" style="text-align:left;font-weight:600;">Description</div>
+                    <div class="col-lg-3" style="text-align:center">  </div>
+                    <div class="col-lg-4"><input type="text" id="Description" name="Description" class="form-control col-md-3" style="width:560px;" /> </div>
+
+                </div>
+
+            </div>
+        </div>
+           
+               <div class="row">
+                   <div class="col-12 bottom-btn-group" style="text-align:center;">
+                    <input type="submit" class="btn btn-success " value="Submit" />
+
+                   </div>
+               </div>
+          
+
+
+     }
+</div>

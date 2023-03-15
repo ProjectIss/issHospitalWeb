@@ -14,9 +14,9 @@ namespace issHospital_Repo
         private issDB db = new issDB();
 
         public List<opDTO> getOPDetails()
-        {
-
-            List<opDTO> lstOP = db.tblReceptions.Where(x => x.isDeleted == false).Select(x=> new opDTO()
+        {   
+           
+            List<opDTO> lstOP = db.tblOpentry.Where(x => x.isDeleted == false).Select(x=> new opDTO()
             {
                Id=x.Id,
                Age =x.Age,
