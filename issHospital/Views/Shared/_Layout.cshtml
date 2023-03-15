@@ -8,7 +8,7 @@
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
-    <title>KOT</title>
+    <title>Hosiptal</title>
     <!-- ===============================================-->
     <!--    Favicons-->
     <!-- ===============================================-->
@@ -107,7 +107,7 @@
                                         </a><!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
-                                        @Html.ActionLink("CustomerSetup", "Index", "Customer", null, new { @class = "nav-link" })
+                                        @Html.ActionLink("CustomerSetup", "Index", "CustomerSetup", null, new { @class = "nav-link" })
                                         @*<a class="nav-link" href="dashboard/crm.html">
                                             <div class="d-flex align-items-center"><span class="nav-link-text ps-1">CustomerSetup</span></div>
                                           </a>*@<!-- more inner pages-->
@@ -118,9 +118,10 @@
                                            </a><!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="dashboard/lms.html">
+                                        @Html.ActionLink("AlterItem", "Index", "AlterItem", null, new { @class = "nav-link" })
+                                        @*<a class="nav-link" href="dashboard/lms.html">
                                             <div class="d-flex align-items-center"><span class="nav-link-text ps-1">AlterItem</span><span class="badge rounded-pill ms-2 badge-soft-success">New</span></div>
-                                        </a><!-- more inner pages-->
+                                        </a>*@<!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
                                         @Html.ActionLink("Department","Index","Dept",null,new { @class="nav-link"})
@@ -144,9 +145,10 @@
         </a>*@<!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="dashboard/support-desk.html">
+                                        @Html.ActionLink("Patreg", "Index", "Patreg", null, new { @class = "nav-link" })
+                                        @*<a class="nav-link" href="dashboard/support-desk.html">
                                             <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Patreg</span><span class="badge rounded-pill ms-2 badge-soft-success">New</span></div>
-                                        </a><!-- more inner pages-->
+                                        </a>*@<!-- more inner pages-->
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="dashboard/support-desk.html">

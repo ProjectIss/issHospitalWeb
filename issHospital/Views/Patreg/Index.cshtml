@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<issHospital_Utility.DTOs.PatregDTO>
-@{
-    ViewBag.Title = "Index";
-    ViewData["Title"] = " Patreg";
-}
+
+
+@{ ViewBag.Title = "Index";
+                ViewData["Title"] = " Patreg";
+  }
 <br />
 <br />
 
@@ -26,7 +27,6 @@
         text-decoration: none;
         width: 10%;
     }
-
 
         .addNew:hover {
             text-decoration: none;
@@ -66,56 +66,50 @@
             {
 
 
-
-            <tr>
-                <td>@item.Data.Id</td>
-                <td>@item.Data.UHID</td>
-                <td>@item.Data.Age</td>
-                <td>@item.Data.Name</td>
-                <td>@item.Data.FatherName</td>
-                <td>@item.Data.Add</td>
-            </tr>
-
-
-            }
+          <tr>
+            <td>@item.Data.Id</td>
+            <td>@item.Data.UHID</td>
+            <td>@item.Data.Age</td>
+            <td>@item.Data.Name</td>
+            <td>@item.Data.FatherName</td>
+            <td>@item.Data.Add</td>
+          </tr>            
+             }
         </tbody>
     </table>
 </div>
-<script src="~/Assets/js/jquery.min.js"></script>
-<script type="text/javascript">
-            $(function () {
-                $('# Patreg').DataTable({
-                    dom: 'Bfrtip',
-                    paging: true,
-                    buttons: [
-                        'copy',
-                        {
-                            extend: 'excel',
-                            title: function () {
-                                var printTitle = 'Patreg';
-                                return printTitle
-                            }
-                            // messageTop: 'The information in this table is copyright to Sirius Cybernetics Corp.'
-                        },
-                        {
-                            extend: 'pdf',
-                            title: function () {
-                                var printTitle = 'Patreg';
-                                return printTitle
-                            }
-                            //  messageBottom: null
-                        },
-                        {
-                            extend: 'print',
-                            title: function () {
-                                var printTitle = 'Patreg';
-                                return printTitle
-                            }
-                        }
-
-                    ]
-                });
-            });
-</script>
-
-
+ <script src="~/Assets/js/jquery.min.js"></script>
+ <script type="text/javascript">
+    $(function () {
+        $('# Patreg').DataTable({
+            dom: 'Bfrtip',
+            paging: true,
+            buttons: [
+                'copy',
+                {
+                    extend: 'excel',
+                    title: function () {
+                        var printTitle = 'Patreg';
+                        return printTitle
+                    }
+                    // messageTop: 'The information in this table is copyright to Sirius Cybernetics Corp.'
+                },
+                {
+                    extend: 'pdf',
+                    title: function () {
+                        var printTitle = 'Patreg';
+                        return printTitle
+                    }
+                    //  messageBottom: null
+                },
+                {
+                    extend: 'print',
+                    title: function () {
+                        var printTitle = 'Patreg';
+                        return printTitle
+                    }
+                }
+            ]
+        });
+    });
+ </script>

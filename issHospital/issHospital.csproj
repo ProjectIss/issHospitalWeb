@@ -844,6 +844,9 @@
     <Content Include="Views\CustomerSetup\Create.cshtml" />
     <Content Include="Views\Dept\Create.cshtml" />
     <Content Include="Views\MenuSetup\Create.cshtml" />
+    <Content Include="Views\AlterItem\Create.cshtml" />
+    <Content Include="Views\Patreg\Create.cshtml" />
+    <Content Include="Views\Receipt\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -39,20 +39,21 @@ namespace issHospital_Repo
 
         public int SaveCustomerSetup(Models.TblCustomerSetup customer)
         {
+            int a = 1;
             try
             {
 
-                int a = 1;
+                
                 db.CustomerSetups.Add(customer);
                 db.SaveChanges();
                 return a;
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                return a = 0;
             }
                     
         }            

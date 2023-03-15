@@ -1,10 +1,8 @@
-﻿@model IEnumerable<issHospital_Repo.Models.TblMenuSetup>
+﻿@model IEnumerable<issHospital_Repo.Models.TblReceipt>
 
 
-@{
-    ViewBag.Title = "Create";
-    ViewData["Title"] = " MenuSetup-Add";
-}
+@{ ViewBag.Title = "Create";
+    ViewData["Title"] = " Recepit-Add"; }
 
 <style>
     .header {
@@ -38,7 +36,7 @@
         <div class="row flex-between-center">
             <div class="col-sm-auto mb-2 mb-sm-0">
                 <h3 class="mb-0">
-                    MenuSetup - Create page
+                    Receipt - Create page
                 </h3>
             </div>
 
@@ -46,7 +44,6 @@
         </div>
     </div>
 </div>
-
 
 <div class="card mb-3" style="margin-top: 1%;">
     @using (Html.BeginForm())
@@ -56,9 +53,16 @@
         <div class="card-body form-group">
             <div class="row">
                 <div class="col-md-6">
-                    <div class="col-lg-4" style="text-align: left; font-weight: 600;">Code</div>
+                    <div class="col-lg-4" style="text-align:left;font-weight:600;">Amount</div>
                     <div class="col-lg-3" style="text-align:center">  </div>
-                    <div class="col-lg-4"><input type="number" id="Code" name="Code" class="form-control col-md-3" style="width:560px;" /> </div>
+                    <div class="col-lg-4"><input type="number" id="Amount" name="Amount" class="form-control col-md-3" style="width:560px;" /> </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="col-lg-4" style="text-align:left;font-weight:600;">Age</div>
+                    <div class="col-lg-3" style="text-align:center">  </div>
+                    <div class="col-lg-4"><input type="number" id="Age" name="Age" class="form-control col-md-3" style="width:560px;" /> </div>
+
                 </div>
                 <div class="col-md-6">
                     <div class="col-lg-4" style="text-align:left;font-weight:600;">Name</div>
@@ -66,35 +70,23 @@
                     <div class="col-lg-4"><input type="text" id="Name" name="Name" class="form-control col-md-3" style="width:560px;" /> </div>
 
                 </div>
-                <div class="col-md-6">
-                    <div class="col-lg-4" style="text-align:left;font-weight:600;">EmailId</div>
-                    <div class="col-lg-3" style="text-align:center">  </div>
-                    <div class="col-lg-4"><input type="text" id="EmailId" name="EmailId" class="form-control col-md-3" style="width:560px;" /> </div>
-
-                </div>
-                <div class="col-md-6">
-                    <div class="col-lg-4" style="text-align:left;font-weight:600;">Phone</div>
-                    <div class="col-lg-3" style="text-align:center">  </div>
-                    <div class="col-lg-4"><input type="number" id="Phone" name="Phone" class="form-control col-md-3" style="width:560px;" /> </div>
-
-                </div>
 
                 <div class="col-md-6">
-                    <div class="col-lg-4" style="text-align:left;font-weight:600;">Address</div>
+                    <div class="col-lg-4" style="text-align:left;font-weight:600;">Doctor</div>
                     <div class="col-lg-3" style="text-align:center">  </div>
-                    <div class="col-lg-4"><input type="text" id="Address" name="Address" class="form-control col-md-3" style="width:560px;" /> </div>
+                    <div class="col-lg-4"><input type="text" id="Doctor" name="Doctor" class="form-control col-md-3" style="width:560px;" /> </div>
 
                 </div>
             </div>
             <br />
 
 
-            <div class="row">
-                <div class="col-12 bottom-btn-group" style="text-align:center;">
+                 <div class="row">
+                    <div class="col-12 bottom-btn-group" style="text-align:center;">
                     <input type="submit" class="btn btn-success " value="Submit" />
 
-                </div>
-            </div>
+                    </div>
+                 </div>
 
         </div>
 

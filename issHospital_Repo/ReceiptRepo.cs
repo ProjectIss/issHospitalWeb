@@ -36,5 +36,13 @@ namespace issHospital_Repo
             }
 
         }
+
+        public int SaveReceipt(Models.TblReceipt Receipt)
+        {
+            int a = 1;
+            db.tblReceipts.Add(Receipt);
+            db.SaveChanges();
+            return a;
+        }
     }
 }

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace issHospital_Repo
 {
-   public class DeptRepo
-   {
+    public class DeptRepo
+    {
         private issDB db = new issDB();
         public List<DeptDTO> getDeptDetails()
         {
@@ -18,7 +18,30 @@ namespace issHospital_Repo
                 {
                     Id = x.Id,
                     Description = x.Description,
-                    Department=x.Department
+                    Department = x.Department
+
+                }).ToList();
+
+                return lstDept;
+
+            }
+
+            catch (Exception Ex)
+            {
+
+                return new List<DeptDTO>();
+            }
+
+        }
+        public List<DeptDTO> getDeptDetailsBYId(int Id)
+        {
+            try
+            {
+                List<DeptDTO> lstDept = db.tblDepts.Where(x => x.isDeleted == false && x.Id == Id).Select(x => new DeptDTO
+                {
+                    Id = x.Id,
+                    Description = x.Description,
+                    Department = x.Department
 
                 }).ToList();
 
@@ -41,5 +64,5 @@ namespace issHospital_Repo
             db.SaveChanges();
             return a;
         }
-   }
+    }
 }

@@ -1,4 +1,4 @@
-﻿using System; 
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -34,7 +34,8 @@ namespace issHospital.Controllers
 
         // POST: CustomerSetup/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include ="id,Code,OB,Ccode,CName,Cphone,Cother,FName,Discount,CPadd,isDeleted,deletedBy,deletedOn,updatedBy,UpdatedOn")] TblCustomerSetup customer)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "id,Code,OB,Ccode,CName,Cphone,Cother,FName,Discount,CPadd,isDeleted,deletedBy,deletedOn,updatedBy,UpdatedOn")] TblCustomerSetup customer)
         {
             try
             {

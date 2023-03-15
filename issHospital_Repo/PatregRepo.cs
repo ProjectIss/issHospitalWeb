@@ -21,7 +21,8 @@ namespace issHospital_Repo
                     Age = x.Age,
                     Name = x.Name,
                     FatherName = x.FatherName,
-                    Add = x.Add
+                    Add = x.Add,
+                    Phone = x.Phone
 
                 }).ToList();
 
@@ -35,6 +36,14 @@ namespace issHospital_Repo
                 return new List<PatregDTO>();
             }
 
+        }
+
+        public int SavePatreg(Models.TblPatreg Patreg)
+        {
+            int a = 1;
+            db.tblPatReg.Add(Patreg);
+            db.SaveChanges();
+            return a;
         }
     }
 }

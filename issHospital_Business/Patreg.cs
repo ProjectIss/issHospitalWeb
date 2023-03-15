@@ -1,5 +1,5 @@
 ﻿using issHospital_Repo;
-
+using issHospital_Repo.Models;
 using issHospital_Utility.DTOs;
 using System;
 using System.Collections.Generic;
@@ -18,6 +18,11 @@ namespace issHospital_Business
             List<PatregDTO> lstPatreg = objRepo.getPatregDetails();
 
             return lstPatreg;
+        }
+
+        public int savePatreg(TblPatreg patreg)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -34,5 +34,27 @@ namespace issHospital_Repo
             }
 
         }
+
+        public int SaveAlterItem(Models.TblAlterItem Alter)
+        {
+            try
+            {
+
+                int a = 1;
+                db.tblAlterItems.Add(Alter);
+                db.SaveChanges();
+                return a;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+        }
+
+
     }
 }

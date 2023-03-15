@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using issHospital_Repo.Models;
 
 namespace issHospital_Business
 {
@@ -18,6 +19,12 @@ namespace issHospital_Business
             List<AlterItemDTO> lstAlterItem = objRepo.getAlterItemDetails();
 
             return lstAlterItem;
+        }
+
+        public int saveAlterItem(TblAlterItem Alter)
+        {
+            int respanse = objRepo.SaveAlterItem(Alter);
+            return (respanse);
         }
 
     }

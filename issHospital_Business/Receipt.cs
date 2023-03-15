@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using issHospital_Repo.Models;
 
 namespace issHospital_Business
 {
@@ -18,6 +19,17 @@ namespace issHospital_Business
             List<ReceiptDTO> lstReceipt = objRepo.getReceiptDetails();
 
             return lstReceipt;
+        }
+
+        public int SaveReceipt(TblReceipt Receipt)
+        {
+            int Respanse = objRepo.SaveReceipt(Receipt);
+            return Respanse;
+        }
+
+        public int saveReceipt(TblReceipt receipt)
+        {
+            throw new NotImplementedException();
         }
     }
 

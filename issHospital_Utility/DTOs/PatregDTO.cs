@@ -8,6 +8,8 @@ namespace issHospital_Utility.DTOs
 {
    public class PatregDTO
     {
+        public string Phone;
+
         public int Id { get; set; }
         public int UHID { get; set; }
         public int Age { get; set; }
@@ -15,5 +17,6 @@ namespace issHospital_Utility.DTOs
         public string Name { get; set; }
         public string FatherName { get; set; }
         public string Add { get; set; }
+         
     }
 }
