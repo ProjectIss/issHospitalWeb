@@ -1,4 +1,7 @@
-﻿using issHospital_Utility.DTOs;
+﻿using issHospital_Repo;
+using issHospital_Repo.Models;
+
+using issHospital_Utility.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +20,12 @@ namespace issHospital_Business
           List<CategoryDTO> lstCategory = objRepo.getCategoryDetails();
 
           return lstCategory;
+        }
+
+        public int SaveCategory(TblCategory category)
+        {
+            int Respance = objRepo.SaveCategory(category);
+            return Respance;
         }
     
     }

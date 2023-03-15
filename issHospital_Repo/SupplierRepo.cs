@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace issHospital_Repo
 {
-    class SupplierRepo
+  public  class SupplierRepo
     {
         private issDB db = new issDB();
 
@@ -36,6 +36,16 @@ namespace issHospital_Repo
                 throw;
             }
 
+        }
+
+        public int savePrescription(object tblSupplier)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int saveSupplier(object tblSupplier)
+        {
+            throw new NotImplementedException();
         }
     }
 }

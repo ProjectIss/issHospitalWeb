@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTOs\CategoryDTO.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DTOs\AlterItemDTO.cs" />
     <Compile Include="DTOs\CategoryDTO.cs" />
@@ -54,8 +53,6 @@
     <Compile Include="DTOs\PatregDTO.cs" />
     <Compile Include="DTOs\PrescriptionDTO.cs" />
     <Compile Include="DTOs\RecepitDTO.cs" />
-    <Compile Include="DTOs\SupplierDTO.cs" />
-    <Compile Include="DTOs\PrescriptionDTO.cs" />
     <Compile Include="DTOs\SupplierDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

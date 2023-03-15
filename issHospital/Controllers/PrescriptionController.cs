@@ -15,7 +15,8 @@ namespace issHospital.Controllers
         // GET: Prescription
         public ActionResult Index()
         {
-            return View();
+            List<PrescriptionDTO> objItemSetup = objBusiness.GetPrescriptionBs();
+            return View(objItemSetup);
         }
 
         // GET: Prescription/Details/5
@@ -41,7 +42,7 @@ namespace issHospital.Controllers
 
                 //  prescriptionDTO.isDeleted = DateTime.Now;
 
-               int res= objBusiness.savePrescription(prescriptionDTO);
+               int res= objBusiness.SavePrescription(prescriptionDTO);
                 if (res==1)
                 {
                     return RedirectToAction("Index");

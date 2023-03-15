@@ -1,4 +1,5 @@
 ﻿using issHospital_Repo;
+using issHospital_Repo.Models;
 
 using issHospital_Utility.DTOs;
 using System;
@@ -19,5 +20,11 @@ namespace issHospital_Business
 
         return lstOP;
        }
-  }
+
+        public int SaveOpentry(TblOpentry opentry)
+        {
+            int Respance = objRepo.SaveOpentry(opentry);
+            return Respance;
+        }
+    }
 }

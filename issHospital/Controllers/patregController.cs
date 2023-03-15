@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace issHospital.Controllers
 {
-    public class patregController : Controller
+    public class PatregController : Controller
     {
         // GET: patreg
         public ActionResult Index()

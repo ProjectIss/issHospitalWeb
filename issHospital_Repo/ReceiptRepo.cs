@@ -29,7 +29,7 @@ namespace issHospital_Repo
 
             }
 
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return new List<ReceiptDTO>();

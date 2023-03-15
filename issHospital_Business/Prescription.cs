@@ -1,22 +1,33 @@
 ﻿using System;
 using issHospital_Repo;
 using issHospital_Repo.Models;
+using issHospital_Utility.DTOs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace issHospital_Business
 {
     public  class Prescription
     {
-        private presRepo objRepo = new presRepo();
+         PrescriptionRepo objRepo = new PrescriptionRepo();
 
-        public int savePrescription(TblPrescription tblPrescription)
+        public List<PrescriptionDTO> GetPrescriptionBs()
         {
-            int resp=objRepo.savePrescription(tblPrescription);
+            List<PrescriptionDTO> lstPre = objRepo.getprescriptionsDetails();
 
-            return resp;
+            return lstPre;
+        }
+
+        public int SavePrescription(TblPrescription tblprescription)
+        {
+
+            int Respance = objRepo.SavePrescription(tblprescription);
+            return Respance;
+
+
         }
     }
 }

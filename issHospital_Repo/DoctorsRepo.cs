@@ -1,4 +1,6 @@
-﻿using issHospital_Utility.DTOs;
+﻿
+using issHospital_Repo.Models;
+using issHospital_Utility.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,14 +27,22 @@ namespace issHospital_Repo
 
                 return lstDoctor;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
               
                 return new List<DoctorDTO>();
             }
         }
-    }
+
+            public int SaveDoctors(Tbldoctors Doctor)
+            {
+                int a = 1;
+                db.tblDoctor.Add(Doctor);
+                db.SaveChanges();
+                return a;
+            }
+        }
 }
 
 

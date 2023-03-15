@@ -1,4 +1,6 @@
 ﻿using issHospital_Repo;
+using issHospital_Repo.Models;
+
 using issHospital_Utility.DTOs;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +19,11 @@ namespace issHospital_Business
             List<DoctorDTO> lstDoctor = objRepo.getDoctorsDetails();
 
             return lstDoctor;
+        }
+        public int SaveDoctors(Tbldoctors Doctor)
+        {
+            int Respance = objRepo.SaveDoctors(Doctor);
+            return Respance;
         }
 
     }

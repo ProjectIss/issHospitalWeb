@@ -81,7 +81,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\TblCustomerSetup.cs" />
-    <Compile Include="Models\ItemSetup.cs" />
+    <Compile Include="Models\TblItemSetup.cs" />
     <Compile Include="Models\TblMenuSetup.cs" />
     <Compile Include="Models\TblAlterItem.cs" />
     <Compile Include="Models\TblCategory.cs" />

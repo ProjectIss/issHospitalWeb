@@ -14,11 +14,11 @@ namespace issHospital_Repo
         {
             try
             {
-                List<ItemSetupDTO> lstItemSetup = db.itemSetups.Where(x => x.isDeleted == false).Select(x => new ItemSetupDTO
+                List<ItemSetupDTO> lstItemSetup = db.tblItemSetup.Where(x => x.isDeleted == false).Select(x => new ItemSetupDTO
                 {
                   Id=x.Id,
                   Reorder=x.Reorder,
-                  price=x.Price,
+                  price=x.price,
                   Menu=x.Menu,
                   Commcode=x.Commcode,
 
@@ -27,11 +27,19 @@ namespace issHospital_Repo
                 
                 return lstItemSetup;
             }
-            catch (Exception )
+            catch (Exception ex )
             {
 
                 return new List<ItemSetupDTO>();
             }
+        }
+
+        public int SaveItemSetup(Models.TblItemSetup ItemSetup)
+        {
+            int a = 1;
+            db.tblItemSetup.Add(ItemSetup);
+            db.SaveChanges();
+            return a;
         }
     }
 }

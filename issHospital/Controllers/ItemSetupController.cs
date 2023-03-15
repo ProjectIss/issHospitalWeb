@@ -4,16 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using issHospital_Repo.Models;
+using issHospital_Business;
 
 namespace issHospital.Controllers
 {
     public class ItemSetupController : Controller
     {
+
+        public itemSetup objModel = new itemSetup();
+
         // GET: ItemSetup
         public ActionResult Index()
         {
-           
-            return View();
+            List<ItemSetupDTO> objItemSetup = objModel.getItemsetupDetails();
+            return View(objItemSetup);
         }
 
         // GET: ItemSetup/Details/5
@@ -30,18 +35,28 @@ namespace issHospital.Controllers
 
         // POST: ItemSetup/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "id,Reorder,Tax,Sprice,Menu,Commcode,Schedule,categoryId,Generic,isDeleted,deletedBy,deletedOn,updatedBy,UpdatedOn")] TblItemSetup ItemSetup)
+
         {
             try
             {
                 // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                ItemSetup.deletedBy = 23;
+                ItemSetup.deletedOn = DateTime.UtcNow;
+                ItemSetup.updatedBy = 23;
+                ItemSetup.updatedOn = DateTime.Now;
+                int nReturn = objModel.SaveItemSetup(ItemSetup);
+                if (nReturn == 1)
+                    return RedirectToAction("Index");
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
+
+            return View();
+
         }
 
         // GET: ItemSetup/Edit/5

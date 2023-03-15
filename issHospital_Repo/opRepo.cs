@@ -1,4 +1,5 @@
 ﻿
+
 using issHospital_Utility.DTOs;
 using System;
 using System.Collections.Generic;
@@ -24,13 +25,13 @@ namespace issHospital_Repo
                     Amount = x.Amount,
                     BalAmt = x.BalAmt,
                     OpNo = x.OpNo,
-                    PaidAmt = x.PaidAmt
+                    PaidAmt = x.PaidAmt 
                 }).ToList();
 
                 return lstOP;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 return new List<opDTO>();
@@ -40,5 +41,13 @@ namespace issHospital_Repo
 
 
         }
+        public int SaveOpentry(Models.TblOpentry opentry)
+        {
+            int a = 1;
+            db.tblOpentry.Add(opentry);
+            db.SaveChanges();
+            return a;
+        }
+
     }
 }

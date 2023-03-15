@@ -7,31 +7,42 @@ using System.Threading.Tasks;
 
 namespace issHospital_Repo
 {
-       public class PrescriptionRepo
-    {
+     public class PrescriptionRepo
+     {
         private issDB db = new issDB();
         public List<PrescriptionDTO> getprescriptionsDetails()
         {
-            try
-            {
-                List<PrescriptionDTO> lstPrescription = db.tblPrescriptions.Where(x => x.isDeleted == false).Select(x => new PrescriptionDTO
+            
+                try
                 {
-                    Id = x.Id,
-                    ENo= x.ENo,
-                    billno = x.billno,
-                    age = x.age,
+                    List<PrescriptionDTO> lstPrescription = db.tblPrescription.Where(x => x.isDeleted == false).Select(x => new PrescriptionDTO
+                    {
+                        Id = x.Id,
+                        ENo = x.ENo,
+                        billno = x.billno,
+                        age = x.age,
 
 
-                }).ToList();
+                    }).ToList();
 
-                return lstPrescription;
-            }
-            catch (Exception)
-            {
+                     return lstPrescription;
+                }
+                       catch (Exception ex)
+                {
 
-                return new List<PrescriptionDTO>();
-            }
+                    return new List<PrescriptionDTO>();
+                }
 
         }
+
+                     public int SavePrescription(Models.TblPrescription tblprescription)
+                     {
+                         int a = 1;
+                         db.tblPrescription.Add(tblprescription);
+                         db.SaveChanges();
+                         return a;
+                     }
+
+                    
     }
 }

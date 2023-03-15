@@ -15,7 +15,7 @@ namespace issHospital_Repo
             {
                 int A = 1;
                 tblPrescription.ENo = 1;
-                db.tblPrescriptions.Add(tblPrescription);
+                //db.tblCategories.Add(tblPrescription);
                 db.SaveChanges();
                 return A;
             }
